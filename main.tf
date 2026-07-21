@@ -3,7 +3,7 @@ data "aws_ami" "app_ami" {
 
   filter {
     name   = "name"
-    values = ["al2023-ami*-x86_64"]
+    values = ["al2023-ami-*-x86_64"]
   }
 
   filter {
