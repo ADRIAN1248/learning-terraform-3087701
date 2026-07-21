@@ -6,16 +6,16 @@ data "aws_ami" "app_ami" {
     values = ["bitnami-tomcat-*-x86_64-hvm-ebs-nami"]
   }
 
+  data "aws_vpc" default"{
+    default = true
+  }
+
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
 
   owners = ["979382823631"] # Bitnami
-}
-
-data "aws_vpc" "default" {
-  default = true
 }
 
 resource "aws_instance" "blog" {
